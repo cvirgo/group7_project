@@ -2,7 +2,7 @@ Package: package1
 Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.1.0
-Author: c(
+Authors@R: c(
     person("Mark", "Hancharik",  role = c("aut","cre")),
     person("Austin", "Gongora", role = "aut"),
     person("Ian", "Willick", role = "aut"),
