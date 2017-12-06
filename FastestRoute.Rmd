@@ -15,23 +15,24 @@ This is where our route will be created. You can use the Location data provided 
 Make sure to initialize both x (starting position) and y (ending position). Can range anywhere from Longitude/Latitude, zip code, name of public insitution, address etc. Set 'mode' to method of transportation. Z will be a location that is preferably a midpoint between location X and Y. Z is essentially the parameter that creates the map. For both X,Y & Z variables the more locatin information provided the more accurate the result. For example if you are near a groery store but are unware of the physical address you can accompany the building with the area's zipcode (seperate with a comma). Additional tweaks may need to be made, such as zoom and size. 
 
 Test Points: 
-x= '1902 Hollow Wind Dr., 77450'
-y='Pattison Elementary'
-z='Walgreens, Fry Rd, 77450' 
-zoom=12
+#x= '1902 Hollow Wind Dr., 77450'
+#y='Walgreens, Fry Rd, 77450'
+#z='S Fry Rd, Highland Knolls Dr'  
+#zoom=16
 
 ```{r route_df, echo=FALSE}
 library(ggmap)
-x='' #starting point
-y=''     #ending point
-z=''     #Map Visual- Midpoint
-from <- x
-to <- y
+library(ggplot2)
+library(rgdal)
+a='1902 Hollow Wind Dr, 77450' #starting point
+b='Walgreens, Fry Rd, 77450'     #ending point
+z='S Fry Rd, Highland Knolls Dr'  #Map Visual- Midpoint
+from <- a
+to <- b
 route_df <- route(from, to, structure = 'route', mode = 'walking')
-qmap(z, zoom = 12) +
+qmap(z, zoom = 16) +
   geom_path(
-    aes(x = lon, y = lat),  colour = 'red', size = 1.5,
-    data = route_df, lineend = 'round')
+    aes(x = lon, y = lat),  colour = 'red', size = 1.5, data = route_df, lineend= 'round')
 ```
 
 
