@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Simple Monte-Carlo integration � mc_int • package1</title>
+<title>Vector Eater — vector_eater • faces</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -47,7 +47,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">package1</a>
+      <a class="navbar-brand" href="../index.html">faces</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -75,105 +75,90 @@
       <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Simple Monte-Carlo integration</h1>
+    <h1>Vector Eater</h1>
     </div>
 
     
-    <p>Compute an approximation of the integral of the function f(x)
-with respect to dx in the range [a, b] by Monte-Carlo integration using
-uniform sampling.</p>
+    <p><!-- %%  ~~ A concise (1-5 lines) description of what the function does. ~~ --></p>
     
 
-    <pre class="usage"><span class='fu'>mc_int</span>(<span class='no'>x_range</span>, <span class='no'>fun</span>, <span class='no'>B</span>, <span class='kw'>seed</span> <span class='kw'>=</span> <span class='fl'>1291</span>)</pre>
+    <pre class="usage"><span class='fu'>vector_eater</span>(<span class='no'>x</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x_range</th>
-      <td><p>A <code>vector</code> of dimension 2 used to denote the integration
-region of interest, i.e. [a, b].</p></td>
-    </tr>
-    <tr>
-      <th>fun</th>
-      <td><p>A <code>string</code> containing the function to be integrated. It
-is assumed that <code>x</code> is used as the variable of interest.</p></td>
-    </tr>
-    <tr>
-      <th>B</th>
-      <td><p>A <code>numeric</code> (integer) used to denote the number of simulations.</p></td>
-    </tr>
-    <tr>
-      <th>seed</th>
-      <td><p>A <code>numeric</code> used to control the seed of the random number
-generator used by this function.</p></td>
+      <th>x</th>
+      <td><p><!-- %%     ~~Describe \code{x} here~~ --></p></td>
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p><!-- %%  ~~ If necessary, more details than the description above ~~ --></p>
+    
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code>list</code> containing the following attributes:</p><dl class='dl-horizontal'>
-     <dt>I</dt><dd><p>Estimated value of the integral</p></dd>
-     <dt>var</dt><dd><p>Estimated variance of the estimator</p></dd>
-</dl>
+    <p><!-- %%  ~Describe the value returned -->
+<!-- %%  If it is a LIST, use -->
+<!-- %%  \item{comp1 }{Description of 'comp1'} -->
+<!-- %%  \item{comp2 }{Description of 'comp2'} -->
+<!-- %% ... --></p>
+    
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
+    <p><!-- %% ~put references to the literature/web site here ~ --></p>
+    
+    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
+
+    <p><!-- %%  ~~further notes~~ --></p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <p><!-- %% ~~objects to See Also as \code{\link{help}}, ~~~ --></p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>mc_int</span>(<span class='kw'>x_range</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>0</span>,<span class='fl'>1</span>), <span class='kw'>fun</span> <span class='kw'>=</span> <span class='st'>"x^2"</span>, <span class='kw'>B</span> <span class='kw'>=</span> <span class='fl'>10</span>^<span class='fl'>5</span>)</div><div class='output co'>#&gt; $I
-#&gt; [1] 0.3322249
-#&gt; 
-#&gt; $var
-#&gt; [1] 8.882763e-07
-#&gt; 
-#&gt; $fun
-#&gt; [1] "x^2"
-#&gt; 
-#&gt; $x_range
-#&gt; [1] 0 1
-#&gt; 
-#&gt; $B
-#&gt; [1] 1e+05
-#&gt; 
-#&gt; attr(,"class")
-#&gt; [1] "MCI"</div><div class='input'><span class='fu'>mc_int</span>(<span class='kw'>x_range</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>0</span>,<span class='fl'>1</span>), <span class='kw'>fun</span> <span class='kw'>=</span> <span class='st'>"x^2*sin(x^2/pi)"</span>, <span class='kw'>B</span> <span class='kw'>=</span> <span class='fl'>10</span>^<span class='fl'>5</span>)</div><div class='output co'>#&gt; $I
-#&gt; [1] 0.06281515
-#&gt; 
-#&gt; $var
-#&gt; [1] 7.002655e-08
-#&gt; 
-#&gt; $fun
-#&gt; [1] "x^2*sin(x^2/pi)"
-#&gt; 
-#&gt; $x_range
-#&gt; [1] 0 1
-#&gt; 
-#&gt; $B
-#&gt; [1] 1e+05
-#&gt; 
-#&gt; attr(,"class")
-#&gt; [1] "MCI"</div></pre>
+    <pre class="examples"><div class='input'><span class='co'>##---- Should be DIRECTLY executable !! ----</span>
+<span class='co'>##-- ==&gt;  Define data, use random,</span>
+<span class='co'>##--	or do  help(data=index)  for the standard data sets.</span>
+
+<span class='co'>## The function is currently defined as</span>
+<span class='kw'>function</span> (<span class='no'>x</span>)
+{
+  }</div><div class='output co'>#&gt; function (x)
+#&gt; {
+#&gt;   }
+#&gt; &lt;environment: 0x109f0c740&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       
+      <li><a href="#details">Details</a></li>
+
       <li><a href="#value">Value</a></li>
+
+      <li><a href="#references">References</a></li>
+
+      <li><a href="#note">Note</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
 
     <h2>Author</h2>
     
-Stephane Guerrier
+<!-- %%  ~~who you are~~ -->
 
   </div>
 </div>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Mark Hancharik, Austin Gongora, Ian Willick, Ciara Virgo.</p>
+  <p>Developed by Mark Hancharik.</p>
 </div>
 
 <div class="pkgdown">

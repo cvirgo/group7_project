@@ -1,14 +1,9 @@
-Package: package1
+Package: faces
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Quasi-Chernoff Visualization
 Version: 0.1.0
-Authors@R: c(
-    person("Mark", "Hancharik",  role = c("aut","cre")),
-    person("Austin", "Gongora", role = "aut"),
-    person("Ian", "Willick", role = "aut"),
-    person("Ciara", "Virgo", role = "aut")
-    )
-Maintainer: Ciara Virgo <cav16@psu.edu>
+Authors@R: c(person("Mark", "Hancharik", email = "mah537@psu.edu", role = c("aut","cre")))
+Maintainer: The package maintainer <yourself@somewhere.net>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: What license is it under?
